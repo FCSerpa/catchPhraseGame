@@ -27,9 +27,4 @@ function renderDinos(dinoArray) {
 
 
 
-	//dinoArray.forEach(function(dino){
-	//	var dinoHTML = dinosTemplate(dino);
-	//	$("#dino-ul").append(dinosTemplate);
-	//});
-
 };

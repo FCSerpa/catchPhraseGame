@@ -18,14 +18,14 @@ app.get("/images/Dinosaurs.jpg", function(req, res){
 	res.sendFile(path.join(views + 'images/Dinosaurs.jpg'));
 });
 
-app.get("/dinos", function (req, res){
+app.get("/phrases", function (req, res){
 	res.send(dinoItems);
 });
 
 var dinoItems = [
 	{name: "Triceratops", text: "Cretaceous herbivore. Quadripedal. Three horns on face."},
-	{name: "Stegasaurus", text: "Jurassic herbivore.  Quadripedal. Vertical plates down the back, and a spikey tail."},
-	{name: "Archaeopterix", text: "Jurassic carnivore.  Bipedal.  Tiny, feathered, long considered the first bird."},
+	{name: "Stegosaurus", text: "Jurassic herbivore.  Quadripedal. Vertical plates down the back, and a spikey tail."},
+	{name: "Archaeopteryx", text: "Jurassic carnivore.  Bipedal.  Tiny, feathered, long considered the first bird."},
 	{name: "Tyrannosaurus", text: "Cretaceous carnivore. Bipedal.  Large predator, known for it's small forelimbs."},
 	{name: "Brontosaurus", text: "Jurassic herbivore. Quadripedal.  Large sauropod.  For a time had to change its name due to a paleontological error, but its original name has since been restored."}
 	];

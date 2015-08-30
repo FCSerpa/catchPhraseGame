@@ -12,4 +12,4 @@ var DinoSchema = new Schema ({
 })
 
 var Dino = mongoose.model('Dino', DinoSchema);
-module.exports = Food;
+module.exports = Dino;
