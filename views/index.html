@@ -15,9 +15,10 @@
 	<div>
 		<img src="images/Dinosaurs.jpg" alt="Triceratops and friends">
 		<h1>Dino Quiz! <small>Guess the dinosaur name from the description.</small><h1>
+		<ul id="dino-ul"></ul>
 	</div>
 	<script type="text/template" id="dinos-template">
-		<p><%= name =>, <%= description =></p>
+		<li><%= name %>: <%= text %></li>
 	</script>
 </body>
 
