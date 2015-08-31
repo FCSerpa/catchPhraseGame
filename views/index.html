@@ -16,7 +16,7 @@
 	<div class="container">
 		<div>
 		<img src="images/Dinosaurs.jpg" class="img-responsive" alt="Triceratops and friends">
-		<h1>Dino Catchphrase! <small>Try to name the dinosaur by the description.</small><h1>
+		<h1>Dino Catchphrase! <small>Try to name the dinosaur by the description. Highlight the gray block to see the answer. Click "Extinct" to remove a dinosaur from the list, and type a new description in the field and click "Evolve" to update that dinosaur (this feature isn't working yet).</small><h1>
 		</div>
 		<div class="input-group">
 		<ul id="dino-ul"></ul>
@@ -29,7 +29,7 @@
 		</div>
 	</div>
 	<script type="text/template" id="dinos-template">
-		<h3><%= name %>: <%= text %></h3>
+		<h3><span style="background: rgb(51, 51, 51);"><%= name %>:</span> <%= text %></h3>
 		<button data-_id="<%= _id %>" id="delete-button" onclick="deleteDino(this)" type="button">make extinct</button>
 		<textarea id="dino-description-update" name="text" placeholder="New Description" disabled></textarea>
 		<button data-_id="<%= _id %>" id="update-button" onclick="updateDino(this)" type="button" disabled>evolve</button>
