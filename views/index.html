@@ -16,9 +16,15 @@
 		<img src="images/Dinosaurs.jpg" alt="Triceratops and friends">
 		<h1>Dino Catchphrase! <small>Try to name the dinosaur by the description.</small><h1>
 		<ul id="dino-ul"></ul>
+		<form id="new-dino-form">
+			<input type="text" name="name" id="dino-name-input" placeholder="Dinosaur Name">
+			<textarea id="dino-description-input" name="text" placeholder="Dinosaur Description"></textarea>
+			<button type="submit"></button>
+		</form>
 	</div>
 	<script type="text/template" id="dinos-template">
 		<li><%= name %>: <%= text %></li>
+		<button data-_id="<%= _id %>" onclick="deleteDino(this)" type="button"></button>
 	</script>
 </body>
 

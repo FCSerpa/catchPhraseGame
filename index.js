@@ -19,7 +19,35 @@ app.get("/images/Dinosaurs.jpg", function(req, res){
 });
 
 app.get("/phrases", function (req, res){
-	res.send(dinoItems);
+	db.Dino.find({}, function(err, dinoArray){
+		if (err) {
+			console.log(err);
+			return res.sendStatus(400);
+		}
+		res.send(dinoArray);
+	})
+});
+
+app.post("/phrases", function (req, res){
+	var newDino = req.body;
+	db.Dino.create(newDino, function(err, dino){
+		if (err) {
+			console.log(err);
+			return res.sendStatus(400);
+		}
+		res.send(dino);
+	});
+});
+
+app.delete("/phrases/:id", function destroy(req, res){
+	var id = req.params.id;
+	db.Dino.remove({_id: id}, function(err, dino){
+		if (err) {
+			console.log(err);
+			return res.sendStatus(400);
+		}
+		res.sendStatus(200);
+	});
 });
 
 var dinoItems = [

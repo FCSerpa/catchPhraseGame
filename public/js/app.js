@@ -1,9 +1,18 @@
 $(function() {
 	getDinos();
+
+	$("#new-dino-form").on("submit", function(e){
+		e.preventDefault();
+		$.post("/phrases", $(this).serialize())
+			.done(function(res){
+				getDinos();
+				$("#new-dino-form")[0].reset();
+			});
+	});
 });
 
 function getDinos(){
-	$.get("/dinos", function(res){
+	$.get("/phrases", function(res){
 		var dinos = res;
 		
 		console.log(dinos);
@@ -22,9 +31,17 @@ function renderDinos(dinoArray) {
 	});
 	// clear content (for repeated use)
 	$("#dino-ul").html("");
-	// append foods to ul
+	// append dinos to ul
 	$("#dino-ul").append(dinoItems);
-
-
-
 };
+
+function deleteDino(extinct) {
+	var dinoId = $(extinct).data()._id;
+	$.ajax({
+		url: '/phrases/' + dinoId,
+		type: 'DELETE',
+		success: function(res) {
+			getDinos();
+		}
+	});
+}
