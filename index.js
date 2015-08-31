@@ -50,6 +50,22 @@ app.delete("/phrases/:id", function destroy(req, res){
 	});
 });
 
+/*
+app.get("/phrases/:id", function (req, res){
+	var id = req.params.id;
+	var newText = req.body;
+	console.log(id);
+	console.log(newText);
+	db.Dino.findByIdAndUpdate({_id: id}, {text: newText}, function(err, dino){
+		if (err) {
+			console.log(err);
+			return res.sendStatus(400);
+		}
+		res.send(dino);
+	})
+})
+*/
+
 var dinoItems = [
 	{name: "Triceratops", text: "Cretaceous herbivore. Quadripedal. Three horns on face."},
 	{name: "Stegosaurus", text: "Jurassic herbivore.  Quadripedal. Vertical plates down the back, and a spikey tail."},

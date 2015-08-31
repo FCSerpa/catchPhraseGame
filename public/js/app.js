@@ -44,4 +44,10 @@ function deleteDino(extinct) {
 			getDinos();
 		}
 	});
+};
+/*
+function updateDino(evolve) {
+	var dinoId = $(evolve).data()._id;
+	$.post("/phrases", $(this).serialize())
 }
+*/
